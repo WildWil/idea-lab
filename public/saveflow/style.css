@@ -1,13 +1,12 @@
 :root {
-  --bg: #f1f4ee;
-  --paper: #fbfcf9;
-  --ink: #12352a;
-  --ink-soft: #3f5c50;
-  --line: #d7ddce;
-  --gold: #c97f1e;
-  --gold-deep: #9c6215;
-  --green-deep: #0f2b22;
-  --focus: #1f6f4f;
+  --bg: #faf9f6;
+  --paper: #ffffff;
+  --navy: #11233f;
+  --slate: #5b6b7e;
+  --line: #e2e5e9;
+  --gold: #b9974a;
+  --gold-deep: #96762f;
+  --focus: #11233f;
 }
 
 * {
@@ -29,8 +28,8 @@
 body {
   margin: 0;
   background: var(--bg);
-  color: var(--ink);
-  font-family: "Public Sans", -apple-system, sans-serif;
+  color: var(--navy);
+  font-family: "Manrope", -apple-system, sans-serif;
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
 }
@@ -54,7 +53,7 @@ header.top {
 }
 
 .wordmark {
-  font-family: "Fraunces", serif;
+  font-family: "Playfair Display", serif;
   font-weight: 600;
   font-size: 19px;
   letter-spacing: -0.01em;
@@ -66,27 +65,28 @@ main {
 }
 
 .eyebrow {
-  font-family: "IBM Plex Mono", monospace;
+  font-size: 12px;
+  font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.08em;
-  font-size: 12px;
-  color: var(--ink-soft);
+  color: var(--slate);
   margin: 0 0 20px;
 }
 
 h1 {
-  font-family: "Fraunces", serif;
+  font-family: "Playfair Display", serif;
   font-weight: 600;
   font-size: clamp(2.1rem, 4.8vw, 3.2rem);
   line-height: 1.12;
-  letter-spacing: -0.015em;
+  letter-spacing: -0.01em;
   margin: 0 0 20px;
   max-width: 17ch;
+  color: var(--navy);
 }
 
 .sub {
   font-size: 1.13rem;
-  color: var(--ink-soft);
+  color: var(--slate);
   max-width: 50ch;
   margin: 0 0 44px;
 }
@@ -95,9 +95,8 @@ h1 {
 .receipt {
   background: var(--paper);
   border: 1px solid var(--line);
-  border-radius: 12px;
+  border-radius: 10px;
   padding: 30px 32px;
-  box-shadow: 0 24px 60px -28px rgba(15, 43, 34, 0.25);
 }
 
 .receipt__ticker {
@@ -109,15 +108,15 @@ h1 {
 }
 
 .receipt__amount {
-  font-family: "IBM Plex Mono", monospace;
-  font-weight: 600;
+  font-family: "Manrope", sans-serif;
+  font-weight: 700;
   font-size: clamp(2rem, 5vw, 2.6rem);
-  color: var(--green-deep);
+  color: var(--gold-deep);
   font-variant-numeric: tabular-nums;
 }
 
 .receipt__label {
-  color: var(--ink-soft);
+  color: var(--slate);
   font-size: 14px;
 }
 
@@ -133,15 +132,15 @@ h1 {
   justify-content: space-between;
   gap: 16px;
   font-size: 14px;
-  font-family: "IBM Plex Mono", monospace;
+  color: var(--navy);
 }
 
 .receipt__row .status {
-  color: var(--ink-soft);
+  color: var(--slate);
 }
 .receipt__row .status.recovered {
   color: var(--gold-deep);
-  font-weight: 600;
+  font-weight: 700;
 }
 
 form.signup {
@@ -157,28 +156,28 @@ input[type="email"] {
   min-width: 0;
   background: var(--paper);
   border: 1px solid var(--line);
-  color: var(--ink);
+  color: var(--navy);
   font-size: 15px;
   padding: 13px 16px;
   border-radius: 8px;
   font-family: inherit;
 }
-input[type="email"]::placeholder { color: #96a196; }
+input[type="email"]::placeholder { color: #a3adba; }
 
 button.cta {
-  background: var(--green-deep);
-  color: #f5f0e6;
+  background: var(--navy);
+  color: #faf9f6;
   border: none;
   font-weight: 600;
   font-size: 15px;
   padding: 13px 22px;
   border-radius: 8px;
   cursor: pointer;
-  font-family: "Public Sans", sans-serif;
+  font-family: "Manrope", sans-serif;
   white-space: nowrap;
   transition: background 0.15s ease;
 }
-button.cta:hover { background: #163f31; }
+button.cta:hover { background: #0b1830; }
 button.cta:disabled { opacity: 0.6; cursor: default; }
 
 .form-msg {
@@ -197,21 +196,22 @@ button.cta:disabled { opacity: 0.6; cursor: default; }
   gap: 28px;
 }
 .value-row h3 {
-  font-family: "Fraunces", serif;
+  font-family: "Playfair Display", serif;
   font-weight: 600;
   font-size: 18px;
   margin: 0 0 6px;
+  color: var(--navy);
 }
 .value-row p {
   margin: 0;
-  color: var(--ink-soft);
+  color: var(--slate);
   font-size: 15px;
   max-width: 54ch;
 }
 
 footer {
   padding: 60px 0 40px;
-  color: #8a9686;
+  color: #9aa5b1;
   font-size: 13px;
 }
 

@@ -1,19 +1,15 @@
-@font-face {
-  font-family: "JetBrains Mono";
-  src: local("JetBrains Mono");
-}
-
 :root {
-  --bg: #0d0f0e;
-  --surface: #14171a;
-  --surface-2: #191d21;
-  --border: #21262d;
+  --bg: #0f172a;
+  --surface: #161b22;
+  --surface-2: #1c2330;
+  --border: #263042;
   --text: #ecefec;
-  --muted: #7d8590;
+  --muted: #64748b;
+  --accent: #2563eb;
+  --accent-dim: #1d4fc4;
   --add: #3fb950;
-  --add-dim: #2ea043;
   --del: #f85149;
-  --focus: #79c0ff;
+  --chg: #d29922;
 }
 
 * {
@@ -39,7 +35,6 @@ html {
 body {
   margin: 0;
   background: var(--bg);
-  background-image: radial-gradient(ellipse 80% 50% at 50% -10%, rgba(63, 185, 80, 0.08), transparent);
   color: var(--text);
   font-family: "Public Sans", -apple-system, sans-serif;
   line-height: 1.5;
@@ -51,7 +46,7 @@ a {
 }
 
 :focus-visible {
-  outline: 2px solid var(--focus);
+  outline: 2px solid var(--accent);
   outline-offset: 3px;
   border-radius: 4px;
 }
@@ -70,15 +65,15 @@ header.top {
   display: inline-flex;
   align-items: baseline;
   gap: 2px;
-  font-family: "JetBrains Mono", monospace;
+  font-family: "Space Grotesk", sans-serif;
   font-weight: 700;
-  font-size: 15px;
+  font-size: 16px;
   letter-spacing: -0.01em;
   text-decoration: none;
   color: var(--text);
 }
 .wordmark .dot {
-  color: var(--add);
+  color: var(--accent);
 }
 
 main {
@@ -96,27 +91,28 @@ main {
 }
 
 h1 {
+  font-family: "Space Grotesk", sans-serif;
+  font-weight: 600;
   font-size: clamp(2.2rem, 5vw, 3.4rem);
   line-height: 1.08;
-  letter-spacing: -0.025em;
+  letter-spacing: -0.02em;
   margin: 0 0 20px;
   max-width: 15ch;
 }
 
 .sub {
   font-size: 1.15rem;
-  color: var(--muted);
+  color: #9aa5b1;
   max-width: 46ch;
   margin: 0 0 40px;
 }
 
-/* Live changelog card — the signature element */
+/* Live changelog card, the signature element */
 .log-card {
   border: 1px solid var(--border);
   background: var(--surface);
-  border-radius: 10px;
+  border-radius: 6px;
   overflow: hidden;
-  box-shadow: 0 20px 60px -20px rgba(0, 0, 0, 0.6);
 }
 
 .log-card__bar {
@@ -152,6 +148,11 @@ h1 {
 .release:nth-child(2) { animation-delay: 0.35s; }
 .release:nth-child(3) { animation-delay: 0.55s; }
 
+@keyframes rise {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
 .release__head {
   display: flex;
   align-items: baseline;
@@ -162,6 +163,7 @@ h1 {
 .release__version {
   font-weight: 700;
   font-size: 14px;
+  color: var(--accent);
 }
 .release__date {
   font-size: 12.5px;
@@ -184,7 +186,7 @@ h1 {
 .diff-line.add .marker { color: var(--add); }
 .diff-line.add { color: #adbac7; }
 .diff-line.del .marker { color: var(--del); }
-.diff-line.chg .marker { color: #d29922; }
+.diff-line.chg .marker { color: var(--chg); }
 
 form.signup {
   margin-top: 48px;
@@ -202,7 +204,7 @@ input[type="email"] {
   color: var(--text);
   font-size: 15px;
   padding: 13px 16px;
-  border-radius: 8px;
+  border-radius: 6px;
   font-family: inherit;
 }
 input[type="email"]::placeholder {
@@ -210,20 +212,20 @@ input[type="email"]::placeholder {
 }
 
 button.cta {
-  background: var(--add);
-  color: #04170a;
+  background: var(--accent);
+  color: #ffffff;
   border: none;
   font-weight: 700;
   font-size: 15px;
   padding: 13px 20px;
-  border-radius: 8px;
+  border-radius: 6px;
   cursor: pointer;
   font-family: inherit;
   white-space: nowrap;
   transition: background 0.15s ease;
 }
 button.cta:hover {
-  background: var(--add-dim);
+  background: var(--accent-dim);
 }
 button.cta:disabled {
   opacity: 0.6;
@@ -249,6 +251,7 @@ button.cta:disabled {
   font-size: 16px;
   margin: 0 0 6px;
   font-family: "JetBrains Mono", monospace;
+  color: var(--text);
 }
 .value-row p {
   margin: 0;
@@ -259,7 +262,7 @@ button.cta:disabled {
 
 footer {
   padding: 60px 0 40px;
-  color: #4d545c;
+  color: #45505f;
   font-size: 13px;
 }
 
