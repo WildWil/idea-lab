@@ -8,7 +8,7 @@
     "binding": "ASSETS"
   },
   "kv_namespaces": [
-    { "binding": "SIGNUPS", "id": "REPLACE_ME_RUN_WRANGLER_KV_NAMESPACE_CREATE" }
+    { "binding": "SIGNUPS", "id": "bfa1c4a85b7b4a79bc790bdffd92eead" }
   ],
   "observability": {
     "enabled": true
