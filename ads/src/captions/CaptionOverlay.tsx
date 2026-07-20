@@ -31,11 +31,15 @@ export const CaptionOverlay: React.FC<Props> = ({
     [captions],
   );
 
-  const page = pages.find(
-    (p, i) =>
-      currentMs >= p.startMs &&
-      (pages[i + 1] ? currentMs < pages[i + 1].startMs : true),
-  );
+  const page = pages.find((p, i) => {
+    const next = pages[i + 1];
+    // Bound the last page by its own final token so captions don't linger
+    // into the end card after the voiceover has finished.
+    const end = next
+      ? next.startMs
+      : (p.tokens[p.tokens.length - 1]?.toMs ?? p.startMs) + 500;
+    return currentMs >= p.startMs && currentMs < end;
+  });
 
   if (!page) return null;
 
