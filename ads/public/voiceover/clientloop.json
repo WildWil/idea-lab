@@ -2,70 +2,70 @@
   {
     "text": "Stop",
     "startMs": 0,
-    "endMs": 337,
+    "endMs": 302,
     "timestampMs": null,
     "confidence": null
   },
   {
     "text": " managing",
-    "startMs": 395,
-    "endMs": 755,
+    "startMs": 372,
+    "endMs": 766,
     "timestampMs": null,
     "confidence": null
   },
   {
     "text": " clients",
-    "startMs": 801,
-    "endMs": 1138,
+    "startMs": 813,
+    "endMs": 1231,
     "timestampMs": null,
     "confidence": null
   },
   {
     "text": " over",
-    "startMs": 1173,
-    "endMs": 1324,
+    "startMs": 1277,
+    "endMs": 1440,
     "timestampMs": null,
     "confidence": null
   },
   {
     "text": " email.",
-    "startMs": 1393,
-    "endMs": 1916,
+    "startMs": 1521,
+    "endMs": 2113,
     "timestampMs": null,
     "confidence": null
   },
   {
     "text": " Give",
-    "startMs": 2090,
-    "endMs": 2276,
+    "startMs": 2392,
+    "endMs": 2577,
     "timestampMs": null,
     "confidence": null
   },
   {
     "text": " them",
-    "startMs": 2310,
-    "endMs": 2438,
+    "startMs": 2601,
+    "endMs": 2740,
     "timestampMs": null,
     "confidence": null
   },
   {
     "text": " one",
-    "startMs": 2519,
-    "endMs": 2694,
+    "startMs": 2821,
+    "endMs": 3019,
     "timestampMs": null,
     "confidence": null
   },
   {
     "text": " link",
-    "startMs": 2740,
-    "endMs": 2961,
+    "startMs": 3077,
+    "endMs": 3297,
     "timestampMs": null,
     "confidence": null
   },
   {
     "text": " instead.",
-    "startMs": 3007,
-    "endMs": 3855,
+    "startMs": 3355,
+    "endMs": 4226,
     "timestampMs": null,
     "confidence": null
   }

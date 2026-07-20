@@ -2,105 +2,105 @@
   {
     "text": "Your",
     "startMs": 0,
-    "endMs": 209,
+    "endMs": 197,
     "timestampMs": null,
     "confidence": null
   },
   {
     "text": " commits",
-    "startMs": 255,
-    "endMs": 592,
+    "startMs": 244,
+    "endMs": 580,
     "timestampMs": null,
     "confidence": null
   },
   {
     "text": " already",
-    "startMs": 650,
-    "endMs": 1045,
+    "startMs": 627,
+    "endMs": 975,
     "timestampMs": null,
     "confidence": null
   },
   {
     "text": " tell",
-    "startMs": 1091,
-    "endMs": 1254,
+    "startMs": 1022,
+    "endMs": 1196,
     "timestampMs": null,
     "confidence": null
   },
   {
     "text": " the",
-    "startMs": 1300,
-    "endMs": 1370,
+    "startMs": 1254,
+    "endMs": 1324,
     "timestampMs": null,
     "confidence": null
   },
   {
     "text": " story.",
-    "startMs": 1416,
-    "endMs": 1950,
+    "startMs": 1370,
+    "endMs": 1916,
     "timestampMs": null,
     "confidence": null
   },
   {
     "text": " Shiplog",
-    "startMs": 2276,
-    "endMs": 2775,
+    "startMs": 2194,
+    "endMs": 2705,
     "timestampMs": null,
     "confidence": null
   },
   {
     "text": " turns",
-    "startMs": 2821,
-    "endMs": 3111,
+    "startMs": 2752,
+    "endMs": 3019,
     "timestampMs": null,
     "confidence": null
   },
   {
     "text": " them",
-    "startMs": 3158,
-    "endMs": 3286,
+    "startMs": 3065,
+    "endMs": 3204,
     "timestampMs": null,
     "confidence": null
   },
   {
     "text": " into",
-    "startMs": 3332,
-    "endMs": 3471,
+    "startMs": 3251,
+    "endMs": 3413,
     "timestampMs": null,
     "confidence": null
   },
   {
     "text": " a",
-    "startMs": 3553,
-    "endMs": 3576,
+    "startMs": 3495,
+    "endMs": 3529,
     "timestampMs": null,
     "confidence": null
   },
   {
     "text": " changelog",
-    "startMs": 3634,
-    "endMs": 4226,
+    "startMs": 3587,
+    "endMs": 4365,
     "timestampMs": null,
     "confidence": null
   },
   {
     "text": " people",
-    "startMs": 4284,
-    "endMs": 4574,
+    "startMs": 4435,
+    "endMs": 4748,
     "timestampMs": null,
     "confidence": null
   },
   {
     "text": " actually",
-    "startMs": 4632,
-    "endMs": 5120,
+    "startMs": 4795,
+    "endMs": 5224,
     "timestampMs": null,
     "confidence": null
   },
   {
     "text": " read.",
-    "startMs": 5201,
-    "endMs": 5851,
+    "startMs": 5294,
+    "endMs": 5991,
     "timestampMs": null,
     "confidence": null
   }

@@ -78,9 +78,11 @@ async function generateOne(id: ClipId) {
         text,
         model_id: "eleven_multilingual_v2",
         voice_settings: {
-          stability: 0.5,
+          // Higher stability + lower style = calmer, more even delivery.
+          // The default (0.5 / 0.3) read as jumpy/erratic on the first pass.
+          stability: 0.8,
           similarity_boost: 0.75,
-          style: 0.3,
+          style: 0.1,
         },
       }),
     },

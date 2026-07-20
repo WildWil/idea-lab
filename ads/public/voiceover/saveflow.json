@@ -2,84 +2,84 @@
   {
     "text": "Card",
     "startMs": 0,
-    "endMs": 383,
+    "endMs": 337,
     "timestampMs": null,
     "confidence": null
   },
   {
     "text": " declined?",
-    "startMs": 430,
-    "endMs": 1010,
+    "startMs": 383,
+    "endMs": 1057,
     "timestampMs": null,
     "confidence": null
   },
   {
     "text": " Customer",
-    "startMs": 1184,
-    "endMs": 1637,
+    "startMs": 1265,
+    "endMs": 1683,
     "timestampMs": null,
     "confidence": null
   },
   {
     "text": " gone.",
-    "startMs": 1695,
-    "endMs": 2113,
+    "startMs": 1741,
+    "endMs": 2218,
     "timestampMs": null,
     "confidence": null
   },
   {
     "text": " Saveflow",
-    "startMs": 2438,
-    "endMs": 3019,
+    "startMs": 2601,
+    "endMs": 3216,
     "timestampMs": null,
     "confidence": null
   },
   {
     "text": " gets",
-    "startMs": 3077,
-    "endMs": 3251,
+    "startMs": 3286,
+    "endMs": 3495,
     "timestampMs": null,
     "confidence": null
   },
   {
     "text": " them",
-    "startMs": 3286,
-    "endMs": 3413,
+    "startMs": 3529,
+    "endMs": 3680,
     "timestampMs": null,
     "confidence": null
   },
   {
     "text": " back",
-    "startMs": 3460,
-    "endMs": 3669,
+    "startMs": 3750,
+    "endMs": 3959,
     "timestampMs": null,
     "confidence": null
   },
   {
     "text": " before",
-    "startMs": 3727,
-    "endMs": 3982,
+    "startMs": 4017,
+    "endMs": 4307,
     "timestampMs": null,
     "confidence": null
   },
   {
     "text": " you",
-    "startMs": 4029,
-    "endMs": 4110,
-    "timestampMs": null,
-    "confidence": null
-  },
-  {
-    "text": " even",
-    "startMs": 4191,
+    "startMs": 4342,
     "endMs": 4423,
     "timestampMs": null,
     "confidence": null
   },
   {
+    "text": " even",
+    "startMs": 4493,
+    "endMs": 4690,
+    "timestampMs": null,
+    "confidence": null
+  },
+  {
     "text": " notice.",
-    "startMs": 4481,
-    "endMs": 5294,
+    "startMs": 4748,
+    "endMs": 5387,
     "timestampMs": null,
     "confidence": null
   }
