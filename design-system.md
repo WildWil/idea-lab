@@ -11,7 +11,7 @@ Precision & Density (category F, Modern Tech-Adjacent). Buyer is developers and 
 
 ### Colors
 - Primary: `#0F172A` (slate), page background
-- Secondary: `#64748B` (cool gray), muted/meta text
+- Secondary: `#94A3B8` (cool gray), muted/meta text (lightened from the library's `#64748B` to clear 4.5:1 contrast on the dark background; audit finding, see Notes)
 - Accent: `#2563EB` (blue), links, buttons, focus ring
 - Semantic (diff lines only): `#3FB950` addition, `#F85149` deletion, `#D29922` changed
 - Text (body): `#C9D1D9` on dark background
@@ -42,7 +42,7 @@ Sophistication & Trust (category B, Professional & Trust-Based Services). Buyer 
 ### Colors
 - Primary: `#11233F` (navy), headings, primary button
 - Secondary: `#5B6B7E` (slate), muted text
-- Accent: `#B9974A` (muted gold), the recovered-dollar figure, used sparingly
+- Accent: `#7D5F26` (muted gold, darkened from the library's `#96762F` to clear 4.5:1 at small text sizes; audit finding, see Notes)
 - Text (body): `#5B6B7E` (slate)
 - Background: `#FAF9F6` (warm white)
 
@@ -95,3 +95,5 @@ Chaos-to-calm convergence: scattered message fragments animate into the single b
 
 ## Notes / decisions made along the way
 Rebuilt from an initial pass that used improvised palettes (frontend-design skill, not Handbuilt) after Will asked to route SaaS site builds through Handbuilt specifically. Kept the structural signature elements from the first pass (live changelog card, recovery receipt, chaos-to-calm convergence) since those were already grounded in each product's own mechanic, not generic. Only the color/type systems changed to Will's actual named directions.
+
+Ran through `/handbuilt-audit audit`. Two contrast values from `style-systems.md` failed WCAG AA at the text sizes they ended up used at (Shiplog's cool gray at ~3.75:1, Saveflow's gold at ~4.05:1 on small text) and were adjusted lighter/darker respectively, noted above. Also flagged: Space Grotesk, Playfair Display, and Instrument Serif (used here for Shiplog, Saveflow, Clientloop respectively, straight from `style-systems.md`) are all on `handbuilt-audit`'s own reflex-reject font ban list as industry-wide oversaturated AI defaults. Left as-is for now since they're Will's own committed library, not a fresh reflex pick, but this is worth Will's attention: the two Handbuilt skills disagree with each other on these fonts, and `style-systems.md` may be due for a refresh.
