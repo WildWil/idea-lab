@@ -10,8 +10,8 @@ export const VOICEOVER_LINES: Record<ClipId, string> = {
 };
 
 export const VOICE_IDS: Record<ClipId, string> = {
-  // "Adam", a calm male ElevenLabs premade voice. Override per-clip if you want variety.
-  shiplog: "pNInz6obpgDQGcFmaJgB",
-  saveflow: "pNInz6obpgDQGcFmaJgB",
-  clientloop: "pNInz6obpgDQGcFmaJgB",
+  // David
+  shiplog: "asDeXBMC8hUkhqqL7agO",
+  saveflow: "asDeXBMC8hUkhqqL7agO",
+  clientloop: "asDeXBMC8hUkhqqL7agO",
 };

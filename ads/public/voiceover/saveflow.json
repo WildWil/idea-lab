@@ -2,84 +2,84 @@
   {
     "text": "Card",
     "startMs": 0,
-    "endMs": 337,
+    "endMs": 255,
     "timestampMs": null,
     "confidence": null
   },
   {
     "text": " declined?",
-    "startMs": 383,
-    "endMs": 1057,
+    "startMs": 290,
+    "endMs": 871,
     "timestampMs": null,
     "confidence": null
   },
   {
     "text": " Customer",
-    "startMs": 1265,
+    "startMs": 1312,
     "endMs": 1683,
     "timestampMs": null,
     "confidence": null
   },
   {
     "text": " gone.",
-    "startMs": 1741,
-    "endMs": 2218,
+    "startMs": 1730,
+    "endMs": 2171,
     "timestampMs": null,
     "confidence": null
   },
   {
     "text": " Saveflow",
-    "startMs": 2601,
-    "endMs": 3216,
+    "startMs": 2612,
+    "endMs": 3088,
     "timestampMs": null,
     "confidence": null
   },
   {
     "text": " gets",
-    "startMs": 3286,
-    "endMs": 3495,
+    "startMs": 3135,
+    "endMs": 3286,
     "timestampMs": null,
     "confidence": null
   },
   {
     "text": " them",
-    "startMs": 3529,
-    "endMs": 3680,
+    "startMs": 3320,
+    "endMs": 3437,
     "timestampMs": null,
     "confidence": null
   },
   {
     "text": " back",
-    "startMs": 3750,
-    "endMs": 3959,
+    "startMs": 3483,
+    "endMs": 3680,
     "timestampMs": null,
     "confidence": null
   },
   {
     "text": " before",
-    "startMs": 4017,
-    "endMs": 4307,
+    "startMs": 3738,
+    "endMs": 3971,
     "timestampMs": null,
     "confidence": null
   },
   {
     "text": " you",
-    "startMs": 4342,
-    "endMs": 4423,
+    "startMs": 4005,
+    "endMs": 4075,
     "timestampMs": null,
     "confidence": null
   },
   {
     "text": " even",
-    "startMs": 4493,
-    "endMs": 4690,
+    "startMs": 4122,
+    "endMs": 4284,
     "timestampMs": null,
     "confidence": null
   },
   {
     "text": " notice.",
-    "startMs": 4748,
-    "endMs": 5387,
+    "startMs": 4331,
+    "endMs": 4969,
     "timestampMs": null,
     "confidence": null
   }
