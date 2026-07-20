@@ -1,0 +1,72 @@
+[
+  {
+    "text": "Stop",
+    "startMs": 0,
+    "endMs": 337,
+    "timestampMs": null,
+    "confidence": null
+  },
+  {
+    "text": " managing",
+    "startMs": 395,
+    "endMs": 755,
+    "timestampMs": null,
+    "confidence": null
+  },
+  {
+    "text": " clients",
+    "startMs": 801,
+    "endMs": 1138,
+    "timestampMs": null,
+    "confidence": null
+  },
+  {
+    "text": " over",
+    "startMs": 1173,
+    "endMs": 1324,
+    "timestampMs": null,
+    "confidence": null
+  },
+  {
+    "text": " email.",
+    "startMs": 1393,
+    "endMs": 1916,
+    "timestampMs": null,
+    "confidence": null
+  },
+  {
+    "text": " Give",
+    "startMs": 2090,
+    "endMs": 2276,
+    "timestampMs": null,
+    "confidence": null
+  },
+  {
+    "text": " them",
+    "startMs": 2310,
+    "endMs": 2438,
+    "timestampMs": null,
+    "confidence": null
+  },
+  {
+    "text": " one",
+    "startMs": 2519,
+    "endMs": 2694,
+    "timestampMs": null,
+    "confidence": null
+  },
+  {
+    "text": " link",
+    "startMs": 2740,
+    "endMs": 2961,
+    "timestampMs": null,
+    "confidence": null
+  },
+  {
+    "text": " instead.",
+    "startMs": 3007,
+    "endMs": 3855,
+    "timestampMs": null,
+    "confidence": null
+  }
+]

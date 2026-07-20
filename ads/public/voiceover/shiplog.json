@@ -1,0 +1,107 @@
+[
+  {
+    "text": "Your",
+    "startMs": 0,
+    "endMs": 209,
+    "timestampMs": null,
+    "confidence": null
+  },
+  {
+    "text": " commits",
+    "startMs": 255,
+    "endMs": 592,
+    "timestampMs": null,
+    "confidence": null
+  },
+  {
+    "text": " already",
+    "startMs": 650,
+    "endMs": 1045,
+    "timestampMs": null,
+    "confidence": null
+  },
+  {
+    "text": " tell",
+    "startMs": 1091,
+    "endMs": 1254,
+    "timestampMs": null,
+    "confidence": null
+  },
+  {
+    "text": " the",
+    "startMs": 1300,
+    "endMs": 1370,
+    "timestampMs": null,
+    "confidence": null
+  },
+  {
+    "text": " story.",
+    "startMs": 1416,
+    "endMs": 1950,
+    "timestampMs": null,
+    "confidence": null
+  },
+  {
+    "text": " Shiplog",
+    "startMs": 2276,
+    "endMs": 2775,
+    "timestampMs": null,
+    "confidence": null
+  },
+  {
+    "text": " turns",
+    "startMs": 2821,
+    "endMs": 3111,
+    "timestampMs": null,
+    "confidence": null
+  },
+  {
+    "text": " them",
+    "startMs": 3158,
+    "endMs": 3286,
+    "timestampMs": null,
+    "confidence": null
+  },
+  {
+    "text": " into",
+    "startMs": 3332,
+    "endMs": 3471,
+    "timestampMs": null,
+    "confidence": null
+  },
+  {
+    "text": " a",
+    "startMs": 3553,
+    "endMs": 3576,
+    "timestampMs": null,
+    "confidence": null
+  },
+  {
+    "text": " changelog",
+    "startMs": 3634,
+    "endMs": 4226,
+    "timestampMs": null,
+    "confidence": null
+  },
+  {
+    "text": " people",
+    "startMs": 4284,
+    "endMs": 4574,
+    "timestampMs": null,
+    "confidence": null
+  },
+  {
+    "text": " actually",
+    "startMs": 4632,
+    "endMs": 5120,
+    "timestampMs": null,
+    "confidence": null
+  },
+  {
+    "text": " read.",
+    "startMs": 5201,
+    "endMs": 5851,
+    "timestampMs": null,
+    "confidence": null
+  }
+]
