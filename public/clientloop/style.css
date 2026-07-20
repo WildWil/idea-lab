@@ -1,3 +1,14 @@
+@property --tx {
+  syntax: "<length>";
+  inherits: false;
+  initial-value: 0px;
+}
+@property --ty {
+  syntax: "<length>";
+  inherits: false;
+  initial-value: 0px;
+}
+
 :root {
   --bg: #fbf9f6;
   --card: #ffffff;
@@ -107,18 +118,43 @@ h1 {
   font-size: 13px;
   color: var(--ink-soft);
   box-shadow: 0 8px 20px -10px rgba(28, 28, 28, 0.14);
-  animation: converge 1.1s cubic-bezier(0.65, 0, 0.35, 1) both;
-  animation-delay: 0.3s;
+  animation-name: converge;
+  animation-fill-mode: both;
 }
-.chip--1 { top: 4%; left: 2%; transform-origin: center; --tx: 240px; --ty: 130px; }
-.chip--2 { top: 8%; right: 4%; --tx: -230px; --ty: 140px; }
-.chip--3 { top: 58%; left: 0%; --tx: 250px; --ty: -30px; }
-.chip--4 { top: 66%; right: 0%; --tx: -250px; --ty: -40px; }
-.chip--5 { top: 2%; left: 42%; --tx: 10px; --ty: 160px; }
+.chip--1 {
+  top: 4%; left: 2%; --tx: 240px; --ty: 130px;
+  animation-duration: 0.95s;
+  animation-delay: 0.2s;
+  animation-timing-function: cubic-bezier(0.55, 0, 0.3, 1);
+}
+.chip--2 {
+  top: 8%; right: 4%; --tx: -230px; --ty: 140px;
+  animation-duration: 1.2s;
+  animation-delay: 0.45s;
+  animation-timing-function: cubic-bezier(0.7, 0, 0.25, 1);
+}
+.chip--3 {
+  top: 58%; left: 0%; --tx: 250px; --ty: -30px;
+  animation-duration: 1.05s;
+  animation-delay: 0.3s;
+  animation-timing-function: cubic-bezier(0.6, 0, 0.35, 1);
+}
+.chip--4 {
+  top: 66%; right: 0%; --tx: -250px; --ty: -40px;
+  animation-duration: 1.3s;
+  animation-delay: 0.55s;
+  animation-timing-function: cubic-bezier(0.65, 0, 0.2, 1);
+}
+.chip--5 {
+  top: 2%; left: 42%; --tx: 10px; --ty: 160px;
+  animation-duration: 1.05s;
+  animation-delay: 0.65s;
+  animation-timing-function: cubic-bezier(0.5, 0, 0.3, 1);
+}
 
 @keyframes converge {
   0% { opacity: 1; transform: translate(0, 0) scale(1); }
-  75% { opacity: 0.4; }
+  70% { opacity: 0.5; }
   100% { opacity: 0; transform: translate(var(--tx), var(--ty)) scale(0.5); }
 }
 
@@ -135,7 +171,7 @@ h1 {
   text-align: center;
   opacity: 0;
   animation: appear 0.6s ease-out both;
-  animation-delay: 1.05s;
+  animation-delay: 1.9s;
 }
 @keyframes appear {
   from { opacity: 0; transform: translate(-50%, -50%) scale(0.94); }
