@@ -218,6 +218,7 @@ footer {
 @media (max-width: 560px) {
   .receipt { padding: 24px 20px; }
   form.signup { flex-direction: column; }
+  input[type="email"] { flex: 0 0 auto; width: 100%; }
   button.cta { width: 100%; }
   .receipt__row { flex-direction: column; gap: 2px; }
 }
