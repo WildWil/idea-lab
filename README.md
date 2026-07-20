@@ -16,7 +16,7 @@ Selected from patterns that show up independently across multiple 2026 indie-hac
 
 ## Status
 
-Landing pages + signup API are built. Not yet deployed — see "Remaining steps" below.
+**Live:** https://idea-lab.warwil533.workers.dev (deployed 2026-07-20). Landing pages + signup API confirmed working in production. Not yet driving any real traffic — see "Remaining steps" below.
 
 ## Structure
 
@@ -44,9 +44,9 @@ wrangler kv key list --namespace-id <ID> --prefix clientloop:
 
 ## Remaining steps (need Will — money, identity, or account access)
 
-1. **`wrangler login`**, or connect this repo to Cloudflare via GitHub-integrated Workers Builds (same pattern as will-ward-portfolio) — local wrangler isn't authenticated yet, so nothing can deploy until one of these happens.
-2. **`wrangler kv namespace create SIGNUPS`** (needs auth from step 1) — then paste the returned id into `wrangler.jsonc`'s `kv_namespaces[0].id`, replacing the placeholder.
-3. **`wrangler deploy`** — ships it to a free `*.workers.dev` URL. No custom domain needed yet for smoke-testing.
+1. ~~`wrangler login`~~ — done 2026-07-20.
+2. ~~Create KV namespace + deploy~~ — done 2026-07-20, live at the URL above.
+3. **Grant the Claude GitHub App access to this repo** — needed before the weekly content/idea-research routine can be created. Not showing up under github.com/settings/installations because the app was never installed on this account at all (only Codex/Cloudflare/Cyclic/Vercel are). Needs to be installed fresh, most likely by starting the flow from claude.ai/code/routines directly rather than from GitHub's side.
 4. **A small paid ad budget** (~$10-25 per idea, ~$30-75 total for these three) on whichever platform fits each buyer best — likely a developer-audience placement (e.g. a relevant newsletter/community ad, or search ads on long-tail terms) rather than broad social. This is the one step that actually costs money and needs a payment method, so it's Will's call on amount and platform.
 5. Watch signups for 1-2 weeks, then decide which (if any) idea clears a bar worth building for real.
 
