@@ -26,6 +26,7 @@ const COLORS = {
 const FPS = 30;
 const INTRO_FRAMES = 9;
 const OUTRO_HOLD_FRAMES = 45;
+const RESOLUTION_START = 88;
 
 type Props = {
   readonly audioDurationInFrames: number;
@@ -53,6 +54,9 @@ const Wordmark: React.FC = () => {
   return (
     <div
       style={{
+        position: "absolute",
+        top: 100,
+        left: 80,
         fontFamily: instrumentSerif.fontFamily,
         fontSize: 36,
         color: COLORS.charcoal,
@@ -64,10 +68,13 @@ const Wordmark: React.FC = () => {
   );
 };
 
+// A tighter, overlapping cluster read as "a pile of messages" rather than
+// scattered dots with dead space between them. Slight rotation sells the
+// hand-scattered feel without needing to spread across the whole frame.
 const FRAGMENTS = [
-  { text: "“any update on this?”", top: 300, left: 60 },
-  { text: "“can you resend the invoice”", top: 420, left: 420 },
-  { text: "“just following up!”", top: 540, left: 140 },
+  { text: "“any update on this?”", top: 480, left: 70, rotate: -3 },
+  { text: "“can you resend the invoice”", top: 590, left: 360, rotate: 2 },
+  { text: "“just following up!”", top: 700, left: 130, rotate: -2 },
 ];
 
 const Fragments: React.FC = () => {
@@ -87,6 +94,10 @@ const Fragments: React.FC = () => {
           extrapolateRight: "clamp",
         });
         const opacity = Math.min(fadeIn, fadeOut);
+        const rise = interpolate(local, [0, 10], [12, 0], {
+          extrapolateLeft: "clamp",
+          extrapolateRight: "clamp",
+        });
 
         return (
           <div
@@ -95,16 +106,18 @@ const Fragments: React.FC = () => {
               position: "absolute",
               top: fragment.top,
               left: fragment.left,
-              maxWidth: 460,
+              maxWidth: 560,
               background: "#FFFFFF",
-              border: `1px solid #E7E1D8`,
-              borderRadius: 12,
-              padding: "16px 20px",
+              border: `1px solid #E0D9CC`,
+              borderRadius: 14,
+              padding: "20px 26px",
               fontFamily: generalSansFamily,
-              fontSize: 28,
-              color: COLORS.inkSoft,
+              fontWeight: 500,
+              fontSize: 34,
+              color: COLORS.charcoal,
               opacity,
-              boxShadow: "0 10px 24px -12px rgba(28,28,28,0.16)",
+              transform: `rotate(${fragment.rotate}deg) translateY(${rise}px)`,
+              boxShadow: "0 14px 30px -14px rgba(28,28,28,0.22)",
             }}
           >
             {fragment.text}
@@ -115,17 +128,16 @@ const Fragments: React.FC = () => {
   );
 };
 
-const LinkCard: React.FC = () => {
+const Resolution: React.FC = () => {
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
-  const start = 88;
-  const local = frame - start;
+  const local = frame - RESOLUTION_START;
   const progress = spring({
     frame: local,
     fps,
     config: { damping: 200, mass: 0.6 },
   });
-  const opacity = interpolate(local, [0, 12], [0, 1], {
+  const opacity = interpolate(local, [0, 15], [0, 1], {
     extrapolateLeft: "clamp",
     extrapolateRight: "clamp",
   });
@@ -133,45 +145,72 @@ const LinkCard: React.FC = () => {
   if (local < -5) return null;
 
   return (
-    <div
+    <AbsoluteFill
       style={{
-        marginTop: 420,
-        opacity,
-        transform: `scale(${interpolate(progress, [0, 1], [0.94, 1])})`,
+        justifyContent: "center",
+        alignItems: "center",
+        paddingLeft: 80,
+        paddingRight: 80,
       }}
     >
       <div
         style={{
-          background: COLORS.charcoal,
-          color: COLORS.beige,
-          borderRadius: 16,
-          padding: "36px 44px",
-          display: "inline-block",
+          opacity,
+          transform: `translateY(${interpolate(progress, [0, 1], [24, 0])}px)`,
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+          textAlign: "center",
         }}
       >
         <div
           style={{
-            fontFamily: generalSansFamily,
-            fontSize: 20,
-            letterSpacing: "0.08em",
-            textTransform: "uppercase",
-            color: "#B8B0A2",
-            marginBottom: 10,
+            fontFamily: instrumentSerif.fontFamily,
+            fontSize: 88,
+            lineHeight: 1.08,
+            letterSpacing: "-0.01em",
+            color: COLORS.charcoal,
+            marginBottom: 48,
           }}
         >
-          Everything, one place
+          One link.
+          <br />
+          Not an inbox.
         </div>
         <div
           style={{
-            fontFamily: generalSansFamily,
-            fontWeight: 600,
-            fontSize: 40,
+            background: COLORS.charcoal,
+            color: COLORS.beige,
+            borderRadius: 20,
+            padding: "40px 56px",
+            width: "100%",
+            maxWidth: 860,
           }}
         >
-          clientloop.co/<span style={{ color: COLORS.clay }}>acme</span>
+          <div
+            style={{
+              fontFamily: generalSansFamily,
+              fontSize: 22,
+              letterSpacing: "0.08em",
+              textTransform: "uppercase",
+              color: "#B8B0A2",
+              marginBottom: 14,
+            }}
+          >
+            Everything, one place
+          </div>
+          <div
+            style={{
+              fontFamily: generalSansFamily,
+              fontWeight: 600,
+              fontSize: 52,
+            }}
+          >
+            clientloop.co/<span style={{ color: COLORS.clay }}>acme</span>
+          </div>
         </div>
       </div>
-    </div>
+    </AbsoluteFill>
   );
 };
 
@@ -181,14 +220,11 @@ const Content: React.FC = () => {
       style={{
         backgroundColor: COLORS.bg,
         fontFamily: generalSansFamily,
-        paddingTop: 100,
-        paddingLeft: 80,
-        paddingRight: 80,
       }}
     >
       <Wordmark />
       <Fragments />
-      <LinkCard />
+      <Resolution />
     </AbsoluteFill>
   );
 };
