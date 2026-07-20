@@ -16,10 +16,11 @@ export type Brand = {
   ink: string;
   muted: string;
   accent: string;
-  // Ambient glow: color + where it sits + how far it drifts.
+  // Ambient glow: light bleeding from an edge anchor, not a floating orb.
   glow: string;
-  glowX: number; // 0..100 (% of width), starting center of glow
-  glowY: number;
+  glowX: number; // anchor point, % of width
+  glowY: number; // anchor point, % of height (keep near/above an edge)
+  glowSpread: number; // % at which the glow fades to transparent
   vignette: string | null; // rgba for corner darkening, or null
   grainOpacity: number;
   grainBlend: "overlay" | "soft-light";
@@ -50,30 +51,23 @@ export const AmbientBackground: React.FC<{ brand: Brand }> = ({ brand }) => {
   const { durationInFrames } = useVideoConfig();
   const p = frame / durationInFrames;
 
-  // Slow, organic drift via layered sines.
-  const driftX = Math.sin(p * Math.PI * 1.4) * 6;
-  const driftY = Math.cos(p * Math.PI * 1.1) * 5;
-  const breathe = 1 + Math.sin(p * Math.PI * 2) * 0.06;
+  // Tiny drift of the anchor so the light feels alive but never reads as a
+  // moving orb. The gradient spans the whole frame from an edge anchor, so it
+  // bleeds like directional lighting rather than sitting as a defined circle.
+  const gx = brand.glowX + Math.sin(p * Math.PI * 1.4) * 3;
+  const gy = brand.glowY + Math.cos(p * Math.PI * 1.1) * 2;
 
   return (
     <AbsoluteFill style={{ backgroundColor: brand.bg, overflow: "hidden" }}>
-      <div
+      <AbsoluteFill
         style={{
-          position: "absolute",
-          inset: "-20%",
-          background: `radial-gradient(closest-side, ${brand.glow}, transparent 70%)`,
-          left: `${brand.glowX - 20 + driftX}%`,
-          top: `${brand.glowY - 20 + driftY}%`,
-          width: "80%",
-          height: "80%",
-          transform: `scale(${breathe})`,
-          filter: "blur(8px)",
+          background: `radial-gradient(150% 110% at ${gx}% ${gy}%, ${brand.glow}, transparent ${brand.glowSpread}%)`,
         }}
       />
       {brand.vignette ? (
         <AbsoluteFill
           style={{
-            background: `radial-gradient(ellipse 120% 100% at 50% 45%, transparent 55%, ${brand.vignette})`,
+            background: `radial-gradient(ellipse 135% 105% at 50% 42%, transparent 48%, ${brand.vignette})`,
           }}
         />
       ) : null}
