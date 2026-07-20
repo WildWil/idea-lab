@@ -3,12 +3,17 @@
   "name": "idea-lab",
   "main": "src/index.js",
   "compatibility_date": "2026-05-28",
+  "workers_dev": true,
   "assets": {
     "directory": "./public",
     "binding": "ASSETS"
   },
   "kv_namespaces": [
     { "binding": "SIGNUPS", "id": "bfa1c4a85b7b4a79bc790bdffd92eead" }
+  ],
+  "routes": [
+    { "pattern": "idea-lab.uk", "custom_domain": true },
+    { "pattern": "www.idea-lab.uk", "custom_domain": true }
   ],
   "observability": {
     "enabled": true
