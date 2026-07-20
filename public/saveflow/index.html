@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Saveflow — recover revenue from failed card payments</title>
+<meta name="description" content="Saveflow watches your Stripe account for failed payments and follows up automatically, so you stop losing customers to expired cards." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600&family=IBM+Plex+Mono:wght@500;600&family=Public+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<header class="top">
+  <div class="wrap">
+    <span class="wordmark">saveflow<span class="gold">.</span></span>
+  </div>
+</header>
+
+<main>
+  <div class="wrap">
+    <p class="eyebrow">For indie SaaS on Stripe</p>
+    <h1>Card declined. Customer gone. Except they don't have to be.</h1>
+    <p class="sub">Saveflow watches your Stripe account for failed payments and follows up automatically — real recovery emails, not a generic dunning blast — so you stop losing customers to expired cards.</p>
+
+    <div class="receipt" aria-label="Example recovery summary">
+      <div class="receipt__ticker">
+        <span class="receipt__amount" id="ticker">$0</span>
+        <span class="receipt__label">recovered this month, automatically</span>
+      </div>
+      <div class="receipt__rows">
+        <div class="receipt__row">
+          <span>Jul 14 — card declined, $49/mo plan</span>
+          <span class="status recovered">recovered Jul 15</span>
+        </div>
+        <div class="receipt__row">
+          <span>Jul 11 — card declined, $129/mo plan</span>
+          <span class="status recovered">recovered Jul 12</span>
+        </div>
+        <div class="receipt__row">
+          <span>Jul 6 — card declined, $49/mo plan</span>
+          <span class="status">2nd email sent</span>
+        </div>
+      </div>
+    </div>
+
+    <form class="signup" id="signup-form" novalidate>
+      <label class="sr-only" for="email">Email address</label>
+      <input type="email" id="email" name="email" placeholder="you@yourproduct.com" autocomplete="email" required />
+      <button type="submit" class="cta">Join the waitlist</button>
+    </form>
+    <p class="form-msg" id="form-msg" role="status"></p>
+
+    <div class="value-rows">
+      <div class="value-row">
+        <h3>Reads Stripe automatically</h3>
+        <p>Connects read-only in a couple of minutes. No code to write, no webhook to maintain yourself.</p>
+      </div>
+      <div class="value-row">
+        <h3>Sounds like you, not a robot</h3>
+        <p>A timed three-email sequence, worded to actually get opened and clicked — not a form-letter dunning notice.</p>
+      </div>
+      <div class="value-row">
+        <h3>One note, only when it matters</h3>
+        <p>A weekly summary: who churned, who came back, and exactly what it recovered for you.</p>
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">Saveflow is in early access. One email when it's ready — nothing else.</div>
+</footer>
+
+<script>
+const form = document.getElementById("signup-form");
+const msg = document.getElementById("form-msg");
+const button = form.querySelector("button");
+
+form.addEventListener("submit", async (e) => {
+  e.preventDefault();
+  const email = document.getElementById("email").value.trim();
+  button.disabled = true;
+  msg.className = "form-msg";
+  msg.textContent = "";
+  try {
+    const res = await fetch("/api/signup", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ idea: "saveflow", email }),
+    });
+    const data = await res.json();
+    if (!res.ok) throw new Error(data.error || "Something went wrong.");
+    form.reset();
+    msg.textContent = "You're on the list. We'll email you when Saveflow ships.";
+    msg.className = "form-msg ok";
+  } catch (err) {
+    msg.textContent = err.message || "Something went wrong. Try again.";
+    msg.className = "form-msg err";
+  } finally {
+    button.disabled = false;
+  }
+});
+
+// Signature moment: count the ticker up once, respecting reduced-motion.
+const ticker = document.getElementById("ticker");
+const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+const target = 4280;
+
+if (prefersReducedMotion) {
+  ticker.textContent = "$" + target.toLocaleString();
+} else {
+  let start = null;
+  const duration = 1400;
+  function tick(ts) {
+    if (start === null) start = ts;
+    const progress = Math.min((ts - start) / duration, 1);
+    const eased = 1 - Math.pow(1 - progress, 3);
+    ticker.textContent = "$" + Math.round(eased * target).toLocaleString();
+    if (progress < 1) requestAnimationFrame(tick);
+  }
+  requestAnimationFrame(tick);
+}
+</script>
+</body>
+</html>

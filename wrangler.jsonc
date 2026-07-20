@@ -1,0 +1,16 @@
+{
+  "$schema": "./node_modules/wrangler/config-schema.json",
+  "name": "idea-lab",
+  "main": "src/index.js",
+  "compatibility_date": "2026-05-28",
+  "assets": {
+    "directory": "./public",
+    "binding": "ASSETS"
+  },
+  "kv_namespaces": [
+    { "binding": "SIGNUPS", "id": "REPLACE_ME_RUN_WRANGLER_KV_NAMESPACE_CREATE" }
+  ],
+  "observability": {
+    "enabled": true
+  }
+}

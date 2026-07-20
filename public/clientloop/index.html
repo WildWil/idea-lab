@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Clientloop — one link instead of an email thread</title>
+<meta name="description" content="Clientloop is a single branded page per client — files, status, next steps, invoices — instead of a scattered email thread." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;600&family=Public+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<header class="top">
+  <div class="wrap">
+    <span class="wordmark">clientloop<span class="peach">.</span></span>
+  </div>
+</header>
+
+<main>
+  <div class="wrap">
+    <p class="eyebrow">For freelancers &amp; consultants</p>
+    <h1>Stop managing clients over email. Give them one link instead.</h1>
+    <p class="sub">Clientloop is a single branded page per client — files, status, next steps, invoices — so nothing important lives in a scattered inbox thread anymore.</p>
+
+    <div class="converge" aria-hidden="true">
+      <div class="chip chip--1">"hey any update on this?"</div>
+      <div class="chip chip--2">"attached is v3, ignore v2"</div>
+      <div class="chip chip--3">"can you resend the invoice"</div>
+      <div class="chip chip--4">"just following up on this!"</div>
+      <div class="chip chip--5">"where are we on the timeline"</div>
+      <div class="link-card">
+        <div class="link-card__label">Everything, one place</div>
+        <div class="link-card__url">clientloop.co/acme<span class="peach">-corp</span></div>
+      </div>
+    </div>
+
+    <form class="signup" id="signup-form" novalidate>
+      <label class="sr-only" for="email">Email address</label>
+      <input type="email" id="email" name="email" placeholder="you@yourstudio.com" autocomplete="email" required />
+      <button type="submit" class="cta">Get early access</button>
+    </form>
+    <p class="form-msg" id="form-msg" role="status"></p>
+
+    <div class="value-rows">
+      <div class="value-row">
+        <h3>One link per client</h3>
+        <p>Share it once. It's always current — no more digging through email for "that file from last month."</p>
+      </div>
+      <div class="value-row">
+        <h3>Looks like your business</h3>
+        <p>Your name, your logo, your colors. Not a generic dashboard with someone else's brand on it.</p>
+      </div>
+      <div class="value-row">
+        <h3>Clients check status, not your inbox</h3>
+        <p>They see progress themselves instead of emailing "just checking in" every few days.</p>
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">Clientloop is in early access. One email when it's ready — nothing else.</div>
+</footer>
+
+<script>
+const form = document.getElementById("signup-form");
+const msg = document.getElementById("form-msg");
+const button = form.querySelector("button");
+
+form.addEventListener("submit", async (e) => {
+  e.preventDefault();
+  const email = document.getElementById("email").value.trim();
+  button.disabled = true;
+  msg.className = "form-msg";
+  msg.textContent = "";
+  try {
+    const res = await fetch("/api/signup", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ idea: "clientloop", email }),
+    });
+    const data = await res.json();
+    if (!res.ok) throw new Error(data.error || "Something went wrong.");
+    form.reset();
+    msg.textContent = "You're on the list. We'll email you when Clientloop ships.";
+    msg.className = "form-msg ok";
+  } catch (err) {
+    msg.textContent = err.message || "Something went wrong. Try again.";
+    msg.className = "form-msg err";
+  } finally {
+    button.disabled = false;
+  }
+});
+</script>
+</body>
+</html>
