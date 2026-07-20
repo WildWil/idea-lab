@@ -175,7 +175,7 @@ const Portal: React.FC<{ startFrame: number }> = ({ startFrame }) => {
                   marginLeft: 8,
                 }}
               >
-                clientloop.co/<span style={{ color: CLAY }}>acme</span>
+                idea-lab.uk/<span style={{ color: CLAY }}>clientloop</span>
               </span>
             </div>
             <div style={{ padding: "14px 34px 28px" }}>

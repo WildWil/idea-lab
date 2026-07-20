@@ -149,7 +149,7 @@ const Product: React.FC<{ startFrame: number }> = ({ startFrame }) => {
               <Dot c="#3FB950" />
             </span>
             <span style={{ color: BRAND.ink, marginLeft: 8 }}>
-              shiplog.dev/changelog
+              idea-lab.uk/shiplog
             </span>
             <LiveTag />
           </div>
